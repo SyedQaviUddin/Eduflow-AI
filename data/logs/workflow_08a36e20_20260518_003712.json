@@ -1,0 +1,171 @@
+{
+  "workflow_id": "08a36e20",
+  "timestamp": "2026-05-18T00:37:12.391151",
+  "logs": [
+    {
+      "timestamp": "2026-05-18T00:37:07.097866",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'Student Warning Notification Workflow' execution started",
+      "metadata": {
+        "workflow_id": "08a36e20"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.097866",
+      "level": "INFO",
+      "agent": "System",
+      "message": "🚀 Starting execution with ID: 08a36e20",
+      "metadata": {
+        "workflow_id": "eca71fdc-e28",
+        "input_data": {
+          "name": "Teacher",
+          "email": "sqavi037@gmail.com",
+          "id": "event_type",
+          "issue": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "text": "Dear Parent,\n\nWe are writing to inform you that your child has received a warning. Please contact the school for further details.\n\nBest regards,\nSchool Administration",
+          "workflow_prompt": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "workflow_name": "Student Warning Notification Workflow",
+          "workflow_description": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "creator_email": "sqavi037@gmail.com",
+          "bulk_emails": [],
+          "bulk_whatsapp_numbers": [],
+          "timestamp": "2026-05-18T00:37:07.088857"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.097866",
+      "level": "INFO",
+      "agent": "[SEND_EMAIL]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "send_email"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.404430",
+      "level": "SUCCESS",
+      "agent": "[SEND_EMAIL]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.404430",
+      "level": "INFO",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "Starting action: action_2",
+      "metadata": {
+        "action_id": "action_2",
+        "action_type": "send_whatsapp"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.705887",
+      "level": "SUCCESS",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_2",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.705887",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.906592",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated:  → FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.906592",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.20070552825927734
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:07.906592",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:11.773580",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to parent@example.com: Warning Notification for Your Child",
+      "metadata": {
+        "recipient": "parent@example.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:11.773580",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 3.866987466812134
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:11.773580",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to parent@example.com",
+      "metadata": {
+        "recipient": "parent@example.com",
+        "subject": "Warning Notification for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:11.773580",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T00:37:12.390136",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6165561676025391
+      }
+    }
+  ],
+  "total_logs": 15,
+  "error_count": 0,
+  "success_count": 7
+}

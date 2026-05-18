@@ -1,0 +1,90 @@
+{
+  "workflow_id": "9ee59c78-723",
+  "execution_id": "9ee59c78-723_20260517_021955",
+  "timestamp": "2026-05-17T02:19:55.047959",
+  "input_data": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "id": "CUST-001",
+    "issue": "Product Complaint",
+    "text": "This product is terrible! Very bad experience. I want a refund!",
+    "timestamp": "2026-05-17T02:19:55.047959"
+  },
+  "agents_executed": [
+    {
+      "agent": "Research",
+      "action": "sentiment_analysis",
+      "status": "completed",
+      "result": {
+        "sentiment": "negative",
+        "score": 0.2,
+        "text": "This product is terrible! Very bad experience. I want a refund!",
+        "analysis_type": "sentiment"
+      }
+    },
+    {
+      "agent": "Analysis",
+      "action": "decision_making",
+      "status": "completed",
+      "result": {
+        "recommended_actions": [
+          "escalate",
+          "notify_admin"
+        ],
+        "confidence": 0.85,
+        "reasoning": "Based on 1 rules and context analysis"
+      }
+    },
+    {
+      "agent": "Notification",
+      "action": "send_email",
+      "status": "completed",
+      "result": {
+        "sent": {
+          "success": true,
+          "status": "sent",
+          "recipient": "sqavi037@gmail.com"
+        },
+        "recipient": "sqavi037@gmail.com"
+      }
+    },
+    {
+      "agent": "Recovery",
+      "action": "health_check",
+      "status": "completed",
+      "result": {
+        "total_failures_handled": 0,
+        "recovery_success_rate": 0,
+        "most_effective_strategy": null
+      }
+    },
+    {
+      "agent": "Reporting",
+      "action": "generate_insights",
+      "status": "completed",
+      "result": {
+        "workflow_name": "qwert",
+        "execution_summary": {
+          "total_steps_executed": 9,
+          "successful_steps": 4,
+          "failed_steps": 0,
+          "success_rate": 44.44,
+          "execution_status": "SUCCESS"
+        },
+        "performance_analysis": {
+          "avg_step_duration": 0.441,
+          "fastest_step": 0.307,
+          "slowest_step": 0.51,
+          "bottleneck_identified": "Sentiment analysis"
+        },
+        "anomalies_detected": [],
+        "optimization_suggestions": [
+          "Cache frequently accessed data to reduce API calls",
+          "Implement circuit breaker pattern for external API calls"
+        ],
+        "predicted_issues": []
+      }
+    }
+  ],
+  "status": "success"
+}

@@ -1,0 +1,203 @@
+{
+  "workflow_id": "be7563b2",
+  "timestamp": "2026-05-17T03:13:21.719017",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T03:13:11.189899",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'Demo Customer Analysis Workflow' execution started",
+      "metadata": {
+        "workflow_id": "be7563b2"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.190234",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: be7563b2",
+      "metadata": {
+        "workflow_id": "2073ba8c-063",
+        "input_data": {
+          "name": "John Smith",
+          "email": "john@example.com",
+          "text": "This product is absolutely terrible! Worst purchase ever. I'm extremely disappointed with the quality and service."
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.190234",
+      "level": "INFO",
+      "agent": "[RESEARCH_ANALYSIS]",
+      "message": "Starting action: sentiment_analysis",
+      "metadata": {
+        "action_id": "sentiment_analysis",
+        "action_type": "research_analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.233946",
+      "level": "ERROR",
+      "agent": "ResearchAgent",
+      "message": "Error: \nLooks like you are missing some required data for this feature.\n\nTo download the necessary data, simply run\n\n    python -m textblob.download_corpora\n\nor use the NLTK downloader to download the missing data: http://nltk.org/data.html\nIf this doesn't fix the problem, file an issue at https://github.com/sloria/TextBlob/issues.\n",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.233946",
+      "level": "SUCCESS",
+      "agent": "[RESEARCH_ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "sentiment_analysis",
+        "duration": 0.04371213912963867
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.233946",
+      "level": "SUCCESS",
+      "agent": "[SENTIMENT]",
+      "message": "\u2705 NEGATIVE (60%)",
+      "metadata": {
+        "sentiment": "negative",
+        "score": 0.2,
+        "confidence": 0.6,
+        "text": "This product is absolutely terrible! Worst purchase ever. I'm extremely disappointed with the qualit",
+        "analysis_type": "sentiment",
+        "method": "keyword_fallback"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.233946",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: risk_assessment",
+      "metadata": {
+        "action_id": "risk_assessment",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.484285",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "risk_assessment",
+        "duration": 0.2503392696380615
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:11.484285",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: email_notification",
+      "metadata": {
+        "action_id": "email_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:16.468071",
+      "level": "SUCCESS",
+      "agent": "[EMAIL-REAL]",
+      "message": "\u2705 Email sent to sqavi037@gmail.com: Alert: Notification",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com",
+        "subject": "Alert: Notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:16.468071",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "email_notification",
+        "duration": 4.98378586769104
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:16.468071",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:16.683197",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: sentiment == 'negative' \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:16.683197",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.21512627601623535
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:16.683769",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: email_notification",
+      "metadata": {
+        "action_id": "email_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:21.101851",
+      "level": "SUCCESS",
+      "agent": "[EMAIL-REAL]",
+      "message": "\u2705 Email sent to admin@company.com: Workflow Notification",
+      "metadata": {
+        "recipient": "admin@company.com",
+        "subject": "Workflow Notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:21.101851",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "email_notification",
+        "duration": 4.41808295249939
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:21.101851",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T03:13:21.717290",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.61543869972229
+      }
+    }
+  ],
+  "total_logs": 19,
+  "error_count": 1,
+  "success_count": 9
+}

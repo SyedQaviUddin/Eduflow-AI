@@ -1,0 +1,47 @@
+{
+  "id": "11fa017f-d25",
+  "name": "Demo Customer Analysis Workflow",
+  "created_at": "2026-05-17T03:12:44.618091",
+  "enabled": true,
+  "execution_count": 1,
+  "last_execution": "2026-05-17T03:12:55.151390",
+  "executions": [],
+  "workflow": {
+    "name": "Demo Customer Analysis Workflow",
+    "trigger": "form_submission",
+    "actions": [
+      {
+        "id": "a1",
+        "type": "sentiment_analysis",
+        "description": "Analyze customer sentiment"
+      },
+      {
+        "id": "a2",
+        "type": "risk_assessment",
+        "description": "Assess customer risk"
+      },
+      {
+        "id": "a3",
+        "type": "email_notification",
+        "description": "Send notification email",
+        "config": {
+          "to": "sqavi037@gmail.com"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "c1",
+        "condition": "sentiment == 'negative'",
+        "then_action": "a3"
+      }
+    ],
+    "notifications": [
+      {
+        "type": "email",
+        "trigger": "on_completion",
+        "recipient": "sqavi037@gmail.com"
+      }
+    ]
+  }
+}

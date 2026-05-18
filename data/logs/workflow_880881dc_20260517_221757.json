@@ -1,0 +1,183 @@
+{
+  "workflow_id": "880881dc",
+  "timestamp": "2026-05-17T22:17:57.425530",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T22:17:51.394587",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'student_warning_notification' execution started",
+      "metadata": {
+        "workflow_id": "880881dc"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:51.394587",
+      "level": "INFO",
+      "agent": "System",
+      "message": "🚀 Starting execution with ID: 880881dc",
+      "metadata": {
+        "workflow_id": "06c9fd28-e5b",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T22:17:51.386598"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:51.394587",
+      "level": "INFO",
+      "agent": "[EMAIL]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "email"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:51.708498",
+      "level": "SUCCESS",
+      "agent": "[EMAIL]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:51.708498",
+      "level": "INFO",
+      "agent": "[WHATSAPP]",
+      "message": "Starting action: action_2",
+      "metadata": {
+        "action_id": "action_2",
+        "action_type": "whatsapp"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:52.022963",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_2",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:52.022963",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to parent_email@example.com: Warning Notification for Your Child",
+      "metadata": {
+        "recipient": "parent_email@example.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.785589694976807
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to parent_email@example.com",
+      "metadata": {
+        "recipient": "parent_email@example.com",
+        "subject": "Warning Notification for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "INFO",
+      "agent": "WhatsApp",
+      "message": "Local WhatsApp notification to +917671901101",
+      "metadata": {
+        "message": "Summary: A student in your class has received a warning. Please follow up as needed."
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp message sent to +917671901101",
+      "metadata": {
+        "phone": "+917671901101",
+        "status": "local_notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "💬 WhatsApp messages sent to 1 recipient(s)",
+      "metadata": {
+        "count": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:56.808553",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:17:57.424514",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6159608364105225
+      }
+    }
+  ],
+  "total_logs": 17,
+  "error_count": 0,
+  "success_count": 9
+}

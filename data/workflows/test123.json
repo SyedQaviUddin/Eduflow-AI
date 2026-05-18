@@ -1,0 +1,20 @@
+{
+  "id": "test123",
+  "name": "Test Workflow",
+  "created_at": "2026-05-17T01:23:10.635177",
+  "enabled": true,
+  "execution_count": 0,
+  "last_execution": null,
+  "executions": [],
+  "workflow": {
+    "name": "Test Workflow",
+    "trigger": "form_submission",
+    "actions": [
+      {
+        "type": "sentiment_analysis"
+      }
+    ],
+    "conditions": [],
+    "notifications": []
+  }
+}

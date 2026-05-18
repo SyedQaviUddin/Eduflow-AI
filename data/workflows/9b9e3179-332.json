@@ -1,0 +1,129 @@
+{
+  "id": "9b9e3179-332",
+  "name": "customer",
+  "created_at": "2026-05-17T01:36:14.936434",
+  "enabled": true,
+  "execution_count": 2,
+  "last_execution": "2026-05-17T02:17:22.479343",
+  "executions": [
+    {
+      "execution_id": "9b9e3179-332_20260517_020342",
+      "timestamp": "2026-05-17T02:03:44.855930",
+      "status": "completed",
+      "sentiment": "negative",
+      "agents_used": 5
+    },
+    {
+      "execution_id": "9b9e3179-332_20260517_021720",
+      "timestamp": "2026-05-17T02:17:22.479343",
+      "status": "completed",
+      "sentiment": "negative",
+      "agents_used": 5
+    }
+  ],
+  "workflow": {
+    "name": "customer",
+    "trigger": "new_complaint",
+    "actions": [
+      {
+        "id": "log_complaint",
+        "type": "log",
+        "description": "Log the complaint details",
+        "config": {
+          "source": "complaint_form",
+          "fields": [
+            "customer_id",
+            "issue_type",
+            "description",
+            "priority"
+          ]
+        }
+      },
+      {
+        "id": "assign_tier1",
+        "type": "assignment",
+        "description": "Assign to first-level support agent",
+        "config": {
+          "team": "tier1_support",
+          "criteria": "round_robin"
+        }
+      },
+      {
+        "id": "send_acknowledgment",
+        "type": "notification",
+        "description": "Send acknowledgment to customer",
+        "config": {
+          "channel": "email",
+          "template": "complaint_received"
+        }
+      },
+      {
+        "id": "escalate_to_tier2",
+        "type": "assignment",
+        "description": "Escalate to second-level support",
+        "config": {
+          "team": "tier2_support",
+          "criteria": "expertise_match"
+        }
+      },
+      {
+        "id": "send_escalation_notice",
+        "type": "notification",
+        "description": "Notify customer about escalation",
+        "config": {
+          "channel": "email",
+          "template": "escalation_notice"
+        }
+      },
+      {
+        "id": "resolve_complaint",
+        "type": "update",
+        "description": "Mark complaint as resolved",
+        "config": {
+          "status": "resolved"
+        }
+      },
+      {
+        "id": "send_followup",
+        "type": "notification",
+        "description": "Send satisfaction survey to customer",
+        "config": {
+          "channel": "email",
+          "template": "satisfaction_survey",
+          "delay": "24h"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "check_priority",
+        "type": "if_then",
+        "condition": "complaint.priority == 'high' OR complaint.priority == 'critical'",
+        "then_action": "escalate_to_tier2",
+        "else_action": "assign_tier1"
+      },
+      {
+        "id": "check_escalation_needed",
+        "type": "if_then",
+        "condition": "tier1_resolution_time > 48h OR complaint.escalation_flag == true",
+        "then_action": "escalate_to_tier2",
+        "else_action": "resolve_complaint"
+      }
+    ],
+    "notifications": [
+      {
+        "type": "email",
+        "trigger": "on_success"
+      },
+      {
+        "type": "slack",
+        "trigger": "on_failure"
+      },
+      {
+        "type": "email",
+        "trigger": "on_completion"
+      }
+    ]
+  },
+  "updated_at": "2026-05-17T02:17:22.480376"
+}

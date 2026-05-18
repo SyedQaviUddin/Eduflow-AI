@@ -1,0 +1,55 @@
+{
+  "id": "Test Workflow - Email Alert",
+  "name": "Test Workflow - Email Alert",
+  "created_at": "2026-05-17T02:55:22.056939",
+  "enabled": true,
+  "execution_count": 2,
+  "last_execution": "2026-05-17T03:11:51.857704",
+  "executions": [
+    {
+      "execution_id": "Test Workflow - Email Alert_20260517_025648",
+      "timestamp": "2026-05-17T02:56:53.546199",
+      "status": "completed",
+      "sentiment": "negative",
+      "agents_used": 5
+    },
+    {
+      "execution_id": "Test Workflow - Email Alert_20260517_031146",
+      "timestamp": "2026-05-17T03:11:51.857704",
+      "status": "completed",
+      "sentiment": "negative",
+      "agents_used": 5
+    }
+  ],
+  "workflow": {
+    "name": "Test Workflow - Email Alert",
+    "trigger": "customer_complaint",
+    "actions": [
+      {
+        "id": "analyze",
+        "type": "sentiment_analysis",
+        "description": "Analyze sentiment"
+      },
+      {
+        "id": "alert",
+        "type": "email_notification",
+        "description": "Send alert on negative"
+      }
+    ],
+    "conditions": [
+      {
+        "id": "negative_check",
+        "type": "if_sentiment_negative",
+        "condition": "sentiment == 'negative'",
+        "then_action": "alert"
+      }
+    ],
+    "notifications": [
+      {
+        "type": "email",
+        "trigger": "on_negative_sentiment"
+      }
+    ]
+  },
+  "updated_at": "2026-05-17T03:11:51.857704"
+}

@@ -1,0 +1,196 @@
+{
+  "workflow_id": "8ee27a06",
+  "timestamp": "2026-05-17T23:03:30.052594",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T23:03:24.361017",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'student_warning_notification' execution started",
+      "metadata": {
+        "workflow_id": "8ee27a06"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:24.361017",
+      "level": "INFO",
+      "agent": "System",
+      "message": "🚀 Starting execution with ID: 8ee27a06",
+      "metadata": {
+        "workflow_id": "06c9fd28-e5b",
+        "input_data": {
+          "name": "Teacher",
+          "email": "sqavi037@gmail.com",
+          "id": "student_warning_event",
+          "issue": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "text": "Dear Parent, this is to inform you that your child has received a warning. Please contact the school for more details.",
+          "workflow_prompt": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "workflow_name": "student_warning_notification",
+          "workflow_description": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "creator_email": "sqavi037@gmail.com",
+          "bulk_emails": [
+            "moinuddin.insight@gmail.com",
+            "sqavi037@gmail.com",
+            "ibrahim002970@gmail.com",
+            "ibrahim112970@gmail.com",
+            "moinuddinsups@gmail.com",
+            "muzie771@gmail.com"
+          ],
+          "bulk_whatsapp_numbers": [],
+          "timestamp": "2026-05-17T23:03:24.352046"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:24.361017",
+      "level": "INFO",
+      "agent": "[EMAIL]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "email"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:24.668187",
+      "level": "SUCCESS",
+      "agent": "[EMAIL]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:24.668187",
+      "level": "INFO",
+      "agent": "[WHATSAPP]",
+      "message": "Starting action: action_2",
+      "metadata": {
+        "action_id": "action_2",
+        "action_type": "whatsapp"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:24.984641",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_2",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:24.986165",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to parent_email@example.com: Warning Notification for Your Child",
+      "metadata": {
+        "recipient": "parent_email@example.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.44935154914856
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to parent_email@example.com",
+      "metadata": {
+        "recipient": "parent_email@example.com",
+        "subject": "Warning Notification for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "ERROR",
+      "agent": "WhatsApp",
+      "message": "Missing WHATSAPP_FROM_NUMBER for Twilio WhatsApp sending. Set WHATSAPP_FROM_NUMBER in .env to your Twilio WhatsApp sender number.",
+      "metadata": {
+        "recipient": "+917671901101"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp message sent to +917671901101",
+      "metadata": {
+        "phone": "+917671901101",
+        "status": "failed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "💬 WhatsApp messages sent to 1 recipient(s)",
+      "metadata": {
+        "count": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:29.435517",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T23:03:30.052594",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6170778274536133
+      }
+    }
+  ],
+  "total_logs": 17,
+  "error_count": 1,
+  "success_count": 9
+}

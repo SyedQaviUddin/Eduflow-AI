@@ -1,0 +1,64 @@
+{
+  "id": "eca71fdc-e28",
+  "name": "Student Warning Notification Workflow",
+  "created_at": "2026-05-18T00:20:31.509242",
+  "enabled": true,
+  "execution_count": 4,
+  "last_execution": "2026-05-18T07:57:28.372737",
+  "executions": [],
+  "workflow": {
+    "name": "Student Warning Notification Workflow",
+    "trigger": "event_type",
+    "description": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+    "schedule": {
+      "frequency": "daily",
+      "time": "09:00",
+      "enabled": false
+    },
+    "actions": [
+      {
+        "id": "action_1",
+        "type": "send_email",
+        "description": "Notify parents about the student warning via email",
+        "config": {
+          "recipient": "parent@example.com",
+          "subject": "Warning Notification for Your Child",
+          "body": "Dear Parent,\n\nWe are writing to inform you that your child has received a warning. Please contact the school for further details.\n\nBest regards,\nSchool Administration"
+        }
+      },
+      {
+        "id": "action_2",
+        "type": "send_whatsapp",
+        "description": "Send summary message to class teacher via WhatsApp",
+        "config": {
+          "recipient": "teacher_phone_number",
+          "message": "Summary: A student has received a warning. Please follow up as needed."
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "condition_1",
+        "type": "if_then",
+        "operator": "equal",
+        "threshold_date": "",
+        "expression": "student_warning_received == true"
+      }
+    ],
+    "notifications": [
+      {
+        "type": "email",
+        "trigger": "on_completion",
+        "recipient": "parent@example.com",
+        "subject": "Warning Notification for Your Child",
+        "body": "Dear Parent,\n\nWe are writing to inform you that your child has received a warning. Please contact the school for further details.\n\nBest regards,\nSchool Administration",
+        "message_type": "alert"
+      }
+    ],
+    "metadata": {
+      "prompt": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+      "creator_email": "sqavi037@gmail.com",
+      "generated_at": "2026-05-18T00:20:31.509242"
+    }
+  }
+}

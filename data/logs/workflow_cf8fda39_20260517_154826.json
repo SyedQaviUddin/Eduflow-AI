@@ -1,0 +1,155 @@
+{
+  "workflow_id": "cf8fda39",
+  "timestamp": "2026-05-17T15:48:26.140871",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T15:48:21.417118",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'holidays ' execution started",
+      "metadata": {
+        "workflow_id": "cf8fda39"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:21.417118",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: cf8fda39",
+      "metadata": {
+        "workflow_id": "cf801089-75a",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "holiday",
+          "timestamp": "2026-05-17T15:48:21.409586"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:21.417118",
+      "level": "INFO",
+      "agent": "[DATE_COMPARISON]",
+      "message": "Starting action: check_date",
+      "metadata": {
+        "action_id": "check_date",
+        "action_type": "date_comparison"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:21.738953",
+      "level": "SUCCESS",
+      "agent": "[DATE_COMPARISON]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "check_date",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:21.738953",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_notification",
+      "metadata": {
+        "action_id": "send_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:22.039601",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_notification",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:22.039992",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:22.240759",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: today > 2026-05-18 \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:22.240759",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.20076656341552734
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:22.240759",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: email_notification",
+      "metadata": {
+        "action_id": "email_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:25.523149",
+      "level": "SUCCESS",
+      "agent": "[EMAIL-REAL]",
+      "message": "\u2705 Email sent to admin@company.com: Workflow Notification",
+      "metadata": {
+        "recipient": "admin@company.com",
+        "subject": "Workflow Notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:25.523149",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "email_notification",
+        "duration": 3.2823896408081055
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:25.523149",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:48:26.139319",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6161701679229736
+      }
+    }
+  ],
+  "total_logs": 14,
+  "error_count": 0,
+  "success_count": 6
+}

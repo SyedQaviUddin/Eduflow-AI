@@ -1,0 +1,116 @@
+{
+  "workflow_id": "9ee59c78-723",
+  "execution_id": "9ee59c78-723_20260517_023457",
+  "timestamp": "2026-05-17T02:34:57.990972",
+  "input_data": {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "id": "CUST-001",
+    "issue": "Product Complaint",
+    "text": "This product is terrible! Very bad experience. I want a refund!",
+    "timestamp": "2026-05-17T02:34:57.985376"
+  },
+  "agents_executed": [
+    {
+      "agent": "Research",
+      "action": "sentiment_analysis",
+      "status": "completed",
+      "result": {
+        "sentiment": "negative",
+        "score": 0.2,
+        "confidence": 0.6,
+        "text": "This product is terrible! Very bad experience. I want a refund!",
+        "analysis_type": "sentiment",
+        "method": "keyword_fallback"
+      }
+    },
+    {
+      "agent": "Analysis",
+      "action": "decision_making",
+      "status": "completed",
+      "result": {
+        "recommended_actions": [
+          "escalate",
+          "notify_admin"
+        ],
+        "confidence": 0.85,
+        "reasoning": "Based on 1 rules and context analysis"
+      }
+    },
+    {
+      "agent": "Notification",
+      "action": "send_email",
+      "status": "completed",
+      "result": {
+        "sent": {
+          "success": false,
+          "status": "failed",
+          "recipient": "sqavi037@gmail.com",
+          "error": "(535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-83f19778c87sm9261628b3a.19 - gsmtp')",
+          "message": "Failed to send email after 3 attempts"
+        },
+        "recipient": "sqavi037@gmail.com"
+      }
+    },
+    {
+      "agent": "Recovery",
+      "action": "health_check",
+      "status": "completed",
+      "result": {
+        "total_failures_handled": 0,
+        "recovery_success_rate": 0,
+        "most_effective_strategy": null
+      }
+    },
+    {
+      "agent": "Reporting",
+      "action": "generate_insights",
+      "status": "completed",
+      "result": {
+        "workflow_name": "qwert",
+        "execution_summary": {
+          "total_steps_executed": 11,
+          "successful_steps": 4,
+          "failed_steps": 2,
+          "success_rate": 36.36,
+          "execution_status": "PARTIAL"
+        },
+        "performance_analysis": {
+          "avg_step_duration": 5.934,
+          "fastest_step": 0.022,
+          "slowest_step": 17.478,
+          "bottleneck_identified": "Sentiment analysis"
+        },
+        "anomalies_detected": [
+          {
+            "type": "high_step_count",
+            "description": "Workflow executed more steps than expected",
+            "step_count": 11,
+            "severity": "low"
+          }
+        ],
+        "optimization_suggestions": [
+          "Implement error handling and retry mechanisms",
+          "Optimize slow-running actions using parallel execution",
+          "Cache frequently accessed data to reduce API calls",
+          "Implement circuit breaker pattern for external API calls"
+        ],
+        "predicted_issues": [
+          {
+            "issue": "High error rate",
+            "probability": "high",
+            "recommended_action": "Review action configurations and error handling",
+            "impact": "Workflow reliability compromised"
+          },
+          {
+            "issue": "Potential cascading failures",
+            "probability": "medium",
+            "recommended_action": "Add failure isolation and recovery points",
+            "impact": "Single failure could affect entire workflow"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "success"
+}

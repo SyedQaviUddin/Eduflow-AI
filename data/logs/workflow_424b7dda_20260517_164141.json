@@ -1,0 +1,105 @@
+{
+  "workflow_id": "424b7dda",
+  "timestamp": "2026-05-17T16:41:41.059471",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T16:41:39.932018",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'today is holiday' execution started",
+      "metadata": {
+        "workflow_id": "424b7dda"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:39.932018",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: 424b7dda",
+      "metadata": {
+        "workflow_id": "c6387108-5f3",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T16:41:39.922701"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:39.932018",
+      "level": "INFO",
+      "agent": "[CHECK_DATE]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "check_date"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:40.240942",
+      "level": "SUCCESS",
+      "agent": "[CHECK_DATE]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:40.240942",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:40.443483",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated:  \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:40.443483",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.20254087448120117
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:40.443483",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:41:41.057752",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.614269495010376
+      }
+    }
+  ],
+  "total_logs": 9,
+  "error_count": 0,
+  "success_count": 3
+}

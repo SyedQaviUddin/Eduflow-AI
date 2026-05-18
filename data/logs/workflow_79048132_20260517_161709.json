@@ -1,0 +1,165 @@
+{
+  "workflow_id": "79048132",
+  "timestamp": "2026-05-17T16:17:09.109387",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T16:16:53.637628",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'holiday' execution started",
+      "metadata": {
+        "workflow_id": "79048132"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:53.637628",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: 79048132",
+      "metadata": {
+        "workflow_id": "2c77a644-3c7",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T16:16:53.630624"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:53.637628",
+      "level": "INFO",
+      "agent": "[DATE_CHECK]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "date_check"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:53.938165",
+      "level": "SUCCESS",
+      "agent": "[DATE_CHECK]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:53.938165",
+      "level": "INFO",
+      "agent": "[SEND_NOTIFICATION]",
+      "message": "Starting action: action_2",
+      "metadata": {
+        "action_id": "action_2",
+        "action_type": "send_notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:54.255060",
+      "level": "SUCCESS",
+      "agent": "[SEND_NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "action_2",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:54.255060",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:54.471258",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: today after 2026-05-18 \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:54.471258",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.21619796752929688
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:16:54.471258",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_announcement_message",
+      "metadata": {
+        "action_id": "send_announcement_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:17:08.504572",
+      "level": "ERROR",
+      "agent": "[ANNOUNCEMENT]",
+      "message": "\u274c Message failed: {'default_user': (553, b'5.1.3 The recipient address <default_user> is not a valid RFC 5321 address.\\n5.1.3 For more information, go to\\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\\n5.1.3 specifications. 98e67ed59e1d1-369515895d2sm7660374a91.8 - gsmtp')}",
+      "metadata": {
+        "recipient": "default_user",
+        "error": "{'default_user': (553, b'5.1.3 The recipient address <default_user> is not a valid RFC 5321 address.\\n5.1.3 For more information, go to\\n5.1.3  https://support.google.com/a/answer/3221692 and review RFC 5321\\n5.1.3 specifications. 98e67ed59e1d1-369515895d2sm7660374a91.8 - gsmtp')}"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:17:08.504572",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_announcement_message",
+        "duration": 14.033314228057861
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:17:08.504572",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "\ud83d\udce7 Email notification sent to default_user",
+      "metadata": {
+        "recipient": "default_user",
+        "subject": "Holiday Alert - May 18 has passed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:17:08.504572",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:17:09.108246",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6033573150634766
+      }
+    }
+  ],
+  "total_logs": 15,
+  "error_count": 1,
+  "success_count": 6
+}

@@ -1,0 +1,58 @@
+{
+  "id": "e740f3a1-381",
+  "name": "complaint",
+  "created_at": "2026-05-17T15:23:18.061960",
+  "enabled": true,
+  "execution_count": 1,
+  "last_execution": "2026-05-17T15:34:55.124050",
+  "executions": [],
+  "workflow": {
+    "name": "complaint",
+    "trigger": "form_submission",
+    "actions": [
+      {
+        "id": "action_1",
+        "type": "sentiment_analysis",
+        "description": "Analyze customer sentiment",
+        "config": {
+          "model": "bert"
+        }
+      },
+      {
+        "id": "action_2",
+        "type": "whatsapp_alert",
+        "description": "Send WhatsApp notification",
+        "config": {
+          "phone": "+1234567890"
+        }
+      },
+      {
+        "id": "action_3",
+        "type": "email_notification",
+        "description": "Email admin",
+        "config": {
+          "to": "admin@company.com"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "condition_1",
+        "type": "if_then",
+        "condition": "sentiment == 'negative'",
+        "then_action": "action_2",
+        "else_action": "action_3"
+      }
+    ],
+    "notifications": [
+      {
+        "type": "whatsapp",
+        "trigger": "on_negative_sentiment"
+      },
+      {
+        "type": "email",
+        "trigger": "on_completion"
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "6fe5c55c-1f6",
+  "name": "Low Attendance Alert Workflow",
+  "created_at": "2026-05-17T21:15:46.352655",
+  "enabled": true,
+  "execution_count": 7,
+  "last_execution": "2026-05-18T08:29:23.103486",
+  "executions": [],
+  "workflow": {
+    "name": "Low Attendance Alert Workflow",
+    "trigger": "attendance_threshold",
+    "description": "When student attendance falls below 75%, email parents and notify the counselor on WhatsApp.",
+    "schedule": {
+      "frequency": "daily",
+      "time": "09:00",
+      "enabled": true
+    },
+    "actions": [
+      {
+        "id": "action_1",
+        "type": "email",
+        "description": "Send attendance alert email to parents",
+        "config": {
+          "recipient": "sqavi037@gmail.com",
+          "subject": "Attendance Alert: Your child's attendance is below 75%",
+          "body": "Dear Parent, This is to inform you that your child's attendance has fallen below the required 75% threshold. Please ensure regular attendance to avoid academic consequences. Thank you."
+        }
+      },
+      {
+        "id": "action_2",
+        "type": "whatsapp_notification",
+        "description": "Notify counselor via WhatsApp about low attendance",
+        "config": {
+          "recipient": "+917671901101",
+          "message": "Alert: Student attendance below 75%. Please follow up with the student and parents."
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "condition_1",
+        "type": "if_then",
+        "operator": "less_than",
+        "threshold_date": null,
+        "expression": "student_attendance < 75"
+      }
+    ],
+    "notifications": [
+      {
+        "type": "email",
+        "trigger": "on_completion",
+        "recipient": "sqavi037@gmail.com",
+        "subject": "Attendance Alert: Your child's attendance is below 75%",
+        "body": "Dear Parent, This is to inform you that your child's attendance has fallen below the required 75% threshold. Please ensure regular attendance to avoid academic consequences. Thank you.",
+        "message_type": "alert"
+      },
+      {
+        "type": "whatsapp",
+        "trigger": "on_completion",
+        "recipient": "+917671901101",
+        "subject": "Low Attendance Alert",
+        "body": "Alert: Student attendance below 75%. Please follow up with the student and parents.",
+        "message_type": "alert"
+      }
+    ]
+  }
+}

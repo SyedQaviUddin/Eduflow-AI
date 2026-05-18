@@ -1,0 +1,212 @@
+{
+  "workflow_id": "54902809-b6f",
+  "workflow_name": "complaint_sentiment_analysis_workflow",
+  "generated_at": "2026-05-17T15:16:47.919408",
+  "requirements": {
+    "needs_research": false,
+    "needs_analysis": false,
+    "needs_notification": true,
+    "needs_recovery": true,
+    "needs_reporting": true,
+    "action_types": [
+      "ai_sentiment_analysis",
+      "send_whatsapp",
+      "send_email",
+      "create_report"
+    ],
+    "total_actions": 4,
+    "has_conditions": true,
+    "has_notifications": true,
+    "estimated_complexity": "complex"
+  },
+  "generated_agents": {
+    "agents": [
+      {
+        "agent_id": "notification_a1",
+        "agent_type": "notification",
+        "name": "Notification Agent 1",
+        "description": "Sends notifications via email, SMS, or webhook calls",
+        "tasks": [
+          {
+            "task_id": "notification_a1_send_email",
+            "description": "Send send_email notification",
+            "action_type": "send_email",
+            "priority": "medium",
+            "depends_on": [],
+            "config": {
+              "recipients": [
+                "admin@example.com"
+              ],
+              "subject": "Negative Complaint Alert",
+              "body": "A negative complaint has been submitted. Details: {{complaint_text}}"
+            },
+            "estimated_duration": 1.0
+          }
+        ],
+        "required_inputs": [
+          "message",
+          "recipient"
+        ],
+        "expected_outputs": [
+          "notification_sent",
+          "delivery_status"
+        ],
+        "custom_config": {
+          "email_service": "gmail",
+          "retry_policy": "exponential_backoff",
+          "timeout": 30
+        },
+        "enabled": true
+      },
+      {
+        "agent_id": "recovery_a1",
+        "agent_type": "recovery",
+        "name": "Recovery Agent 1",
+        "description": "Handles failures and implements self-healing strategies",
+        "tasks": [
+          {
+            "task_id": "recovery_a1_retry",
+            "description": "Attempt recovery using retry strategy",
+            "action_type": "recovery_retry",
+            "priority": "high",
+            "depends_on": [],
+            "config": {
+              "strategy": "retry",
+              "max_attempts": 3
+            },
+            "estimated_duration": 1.0
+          },
+          {
+            "task_id": "recovery_a1_fallback",
+            "description": "Attempt recovery using fallback strategy",
+            "action_type": "recovery_fallback",
+            "priority": "high",
+            "depends_on": [],
+            "config": {
+              "strategy": "fallback",
+              "max_attempts": 3
+            },
+            "estimated_duration": 1.0
+          },
+          {
+            "task_id": "recovery_a1_cache",
+            "description": "Attempt recovery using cache strategy",
+            "action_type": "recovery_cache",
+            "priority": "high",
+            "depends_on": [],
+            "config": {
+              "strategy": "cache",
+              "max_attempts": 3
+            },
+            "estimated_duration": 1.0
+          },
+          {
+            "task_id": "recovery_a1_alert",
+            "description": "Attempt recovery using alert strategy",
+            "action_type": "recovery_alert",
+            "priority": "critical",
+            "depends_on": [],
+            "config": {
+              "strategy": "alert",
+              "max_attempts": 3
+            },
+            "estimated_duration": 1.0
+          }
+        ],
+        "required_inputs": [
+          "error",
+          "failed_action"
+        ],
+        "expected_outputs": [
+          "recovery_status",
+          "recovery_strategy_used"
+        ],
+        "custom_config": {
+          "ai_powered": true,
+          "max_recovery_attempts": 3,
+          "timeout": 60,
+          "deepseek_enabled": true
+        },
+        "enabled": true
+      },
+      {
+        "agent_id": "reporting_a1",
+        "agent_type": "reporting",
+        "name": "Reporting Agent 1",
+        "description": "Generates reports and detects anomalies in execution",
+        "tasks": [
+          {
+            "task_id": "reporting_a1_metrics",
+            "description": "Collect and analyze execution metrics",
+            "action_type": "metrics_collection",
+            "priority": "high",
+            "depends_on": [],
+            "config": {
+              "metrics": [
+                "duration",
+                "success_rate",
+                "error_count"
+              ]
+            },
+            "estimated_duration": 1.0
+          },
+          {
+            "task_id": "reporting_a1_anomalies",
+            "description": "Detect anomalies in execution data",
+            "action_type": "anomaly_detection",
+            "priority": "medium",
+            "depends_on": [],
+            "config": {
+              "sensitivity": 0.7
+            },
+            "estimated_duration": 1.0
+          },
+          {
+            "task_id": "reporting_a1_report",
+            "description": "Generate comprehensive execution report",
+            "action_type": "report_generation",
+            "priority": "medium",
+            "depends_on": [],
+            "config": {
+              "format": "json",
+              "include_recommendations": true
+            },
+            "estimated_duration": 1.0
+          }
+        ],
+        "required_inputs": [
+          "execution_logs",
+          "metrics"
+        ],
+        "expected_outputs": [
+          "report",
+          "anomalies",
+          "recommendations"
+        ],
+        "custom_config": {
+          "report_format": "json",
+          "historical_comparison": true,
+          "anomaly_detection_enabled": true
+        },
+        "enabled": true
+      }
+    ],
+    "execution_order": [
+      "recovery_a1",
+      "notification_a1",
+      "reporting_a1"
+    ],
+    "dependencies": {
+      "notification_a1": [],
+      "recovery_a1": [],
+      "reporting_a1": [
+        "notification_a1",
+        "recovery_a1"
+      ]
+    },
+    "parallelizable_agents": [],
+    "total_estimated_duration": 4.0
+  },
+  "agent_count": 3,
+  "status": "ready"
+}

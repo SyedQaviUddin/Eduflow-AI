@@ -1,0 +1,165 @@
+{
+  "workflow_id": "c68a1721",
+  "timestamp": "2026-05-17T16:11:44.644040",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T16:11:25.850922",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'holidays ' execution started",
+      "metadata": {
+        "workflow_id": "c68a1721"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:25.850922",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: c68a1721",
+      "metadata": {
+        "workflow_id": "cf801089-75a",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T16:11:25.850922"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:25.850922",
+      "level": "INFO",
+      "agent": "[DATE_COMPARISON]",
+      "message": "Starting action: check_date",
+      "metadata": {
+        "action_id": "check_date",
+        "action_type": "date_comparison"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.161809",
+      "level": "SUCCESS",
+      "agent": "[DATE_COMPARISON]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "check_date",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.161809",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_notification",
+      "metadata": {
+        "action_id": "send_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.477249",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_notification",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.478178",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.693585",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: today > 2026-05-18 \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.693585",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.2154078483581543
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:26.693585",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_workflow_message",
+      "metadata": {
+        "action_id": "send_workflow_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:44.029089",
+      "level": "SUCCESS",
+      "agent": "[WORKFLOW]",
+      "message": "\u2705 Message sent to sqavi037@gmail.com,syeduddin827@gmail.com: Workflow Notification",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com,syeduddin827@gmail.com",
+        "type": "workflow"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:44.029089",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_workflow_message",
+        "duration": 17.335503101348877
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:44.029089",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "\ud83d\udce7 Email notification sent to sqavi037@gmail.com,syeduddin827@gmail.com",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com,syeduddin827@gmail.com",
+        "subject": "Workflow Notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:44.029089",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:11:44.642857",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6137681007385254
+      }
+    }
+  ],
+  "total_logs": 15,
+  "error_count": 0,
+  "success_count": 7
+}

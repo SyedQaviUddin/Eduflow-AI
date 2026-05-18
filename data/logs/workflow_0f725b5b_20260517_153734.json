@@ -1,0 +1,194 @@
+{
+  "workflow_id": "0f725b5b",
+  "timestamp": "2026-05-17T15:37:34.570873",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T15:37:32.514534",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'complaint_sentiment_analysis_workflow' execution started",
+      "metadata": {
+        "workflow_id": "0f725b5b"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:32.515535",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: 0f725b5b",
+      "metadata": {
+        "workflow_id": "54902809-b6f",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T15:37:32.509556"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:32.515535",
+      "level": "INFO",
+      "agent": "[AI_SENTIMENT_ANALYSIS]",
+      "message": "Starting action: analyze_sentiment",
+      "metadata": {
+        "action_id": "analyze_sentiment",
+        "action_type": "ai_sentiment_analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:32.817769",
+      "level": "SUCCESS",
+      "agent": "[AI_SENTIMENT_ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "analyze_sentiment",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:32.817769",
+      "level": "INFO",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "Starting action: send_whatsapp_alert",
+      "metadata": {
+        "action_id": "send_whatsapp_alert",
+        "action_type": "send_whatsapp"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.119290",
+      "level": "SUCCESS",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_whatsapp_alert",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.119290",
+      "level": "INFO",
+      "agent": "[SEND_EMAIL]",
+      "message": "Starting action: send_email_admin",
+      "metadata": {
+        "action_id": "send_email_admin",
+        "action_type": "send_email"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.421137",
+      "level": "SUCCESS",
+      "agent": "[SEND_EMAIL]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_email_admin",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.421137",
+      "level": "INFO",
+      "agent": "[CREATE_REPORT]",
+      "message": "Starting action: create_escalation_report",
+      "metadata": {
+        "action_id": "create_escalation_report",
+        "action_type": "create_report"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.737410",
+      "level": "SUCCESS",
+      "agent": "[CREATE_REPORT]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "create_escalation_report",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.737410",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.952855",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: {{sentiment}} == 'negative' \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.953308",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.21544504165649414
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.953308",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.953308",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp notification queued for +1234567890",
+      "metadata": {
+        "phone": "+1234567890"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.953308",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:33.953308",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:37:34.568888",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6155803203582764
+      }
+    }
+  ],
+  "total_logs": 18,
+  "error_count": 0,
+  "success_count": 8
+}

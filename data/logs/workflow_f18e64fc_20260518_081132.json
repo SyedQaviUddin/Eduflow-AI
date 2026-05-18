@@ -1,0 +1,348 @@
+{
+  "workflow_id": "f18e64fc",
+  "timestamp": "2026-05-18T08:11:32.839286",
+  "logs": [
+    {
+      "timestamp": "2026-05-18T08:11:04.113020",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'student_warning_notification' execution started",
+      "metadata": {
+        "workflow_id": "f18e64fc"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:04.113020",
+      "level": "INFO",
+      "agent": "System",
+      "message": "🚀 Starting execution with ID: f18e64fc",
+      "metadata": {
+        "workflow_id": "834c0920-13e",
+        "input_data": {
+          "name": "Teacher",
+          "email": "sqavi037@gmail.com",
+          "id": "student_warning_received",
+          "issue": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "text": "Dear Parent,\n\nThis is to inform you that your child has received a warning at school. Please contact the class teacher for more details.\n\nBest regards,\nSchool Administration",
+          "workflow_prompt": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "workflow_name": "student_warning_notification",
+          "workflow_description": "When a student receives a warning, notify parents by email and send a summary message to the class teacher via WhatsApp.",
+          "creator_email": "sqavi037@gmail.com",
+          "bulk_emails": [
+            "moinuddin.insight@gmail.com",
+            "ibrahim002970@gmail.com",
+            "muzie771@gmail.com",
+            "moinuddinsups@gmail.com",
+            "sqavi037@gmail.com",
+            "ibrahim112970@gmail.com"
+          ],
+          "bulk_whatsapp_numbers": [],
+          "timestamp": "2026-05-18T08:11:04.100710"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:04.113020",
+      "level": "INFO",
+      "agent": "[SEND_EMAIL]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "send_email"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:04.421000",
+      "level": "SUCCESS",
+      "agent": "[SEND_EMAIL]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:04.421000",
+      "level": "INFO",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "Starting action: action_2",
+      "metadata": {
+        "action_id": "action_2",
+        "action_type": "send_whatsapp"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:04.731870",
+      "level": "SUCCESS",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_2",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:04.732625",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:10.200657",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to moinuddin.insight@gmail.com: Warning Notice for Your Child",
+      "metadata": {
+        "recipient": "moinuddin.insight@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:10.200657",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 5.468032598495483
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:10.200657",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to moinuddin.insight@gmail.com",
+      "metadata": {
+        "recipient": "moinuddin.insight@gmail.com",
+        "subject": "Warning Notice for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:10.200657",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:14.489585",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to ibrahim002970@gmail.com: Warning Notice for Your Child",
+      "metadata": {
+        "recipient": "ibrahim002970@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:14.489585",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.288928031921387
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:14.489585",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to ibrahim002970@gmail.com",
+      "metadata": {
+        "recipient": "ibrahim002970@gmail.com",
+        "subject": "Warning Notice for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:14.489585",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:18.741377",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to muzie771@gmail.com: Warning Notice for Your Child",
+      "metadata": {
+        "recipient": "muzie771@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:18.741377",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.25179123878479
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:18.741377",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to muzie771@gmail.com",
+      "metadata": {
+        "recipient": "muzie771@gmail.com",
+        "subject": "Warning Notice for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:18.741377",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:23.304578",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to moinuddinsups@gmail.com: Warning Notice for Your Child",
+      "metadata": {
+        "recipient": "moinuddinsups@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:23.304578",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.563201189041138
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:23.304578",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to moinuddinsups@gmail.com",
+      "metadata": {
+        "recipient": "moinuddinsups@gmail.com",
+        "subject": "Warning Notice for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:23.304578",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:27.605335",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to sqavi037@gmail.com: Warning Notice for Your Child",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:27.605335",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.300756931304932
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:27.605335",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to sqavi037@gmail.com",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com",
+        "subject": "Warning Notice for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:27.605335",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:32.220472",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to ibrahim112970@gmail.com: Warning Notice for Your Child",
+      "metadata": {
+        "recipient": "ibrahim112970@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:32.220472",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.615137100219727
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:32.220472",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to ibrahim112970@gmail.com",
+      "metadata": {
+        "recipient": "ibrahim112970@gmail.com",
+        "subject": "Warning Notice for Your Child"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:32.220472",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-18T08:11:32.834133",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6136608123779297
+      }
+    }
+  ],
+  "total_logs": 32,
+  "error_count": 0,
+  "success_count": 21
+}

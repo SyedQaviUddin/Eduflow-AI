@@ -1,0 +1,245 @@
+{
+  "workflow_id": "be86740d",
+  "timestamp": "2026-05-17T22:59:14.089807",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T22:59:08.848344",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'Low Attendance Alert Workflow' execution started",
+      "metadata": {
+        "workflow_id": "be86740d"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:08.848344",
+      "level": "INFO",
+      "agent": "System",
+      "message": "🚀 Starting execution with ID: be86740d",
+      "metadata": {
+        "workflow_id": "6fe5c55c-1f6",
+        "input_data": {
+          "name": "Teacher",
+          "email": "sqavi037@gmail.com",
+          "id": "attendance_threshold",
+          "issue": "When student attendance falls below 75%, email parents and notify the counselor on WhatsApp.",
+          "text": "Dear Parent, This is to inform you that your child's attendance has fallen below the required 75% threshold. Please ensure regular attendance to avoid academic consequences. Thank you.",
+          "workflow_prompt": "When student attendance falls below 75%, email parents and notify the counselor on WhatsApp.",
+          "workflow_name": "Low Attendance Alert Workflow",
+          "workflow_description": "When student attendance falls below 75%, email parents and notify the counselor on WhatsApp.",
+          "creator_email": "sqavi037@gmail.com",
+          "bulk_emails": [
+            "ibrahim002970@gmail.com",
+            "ibrahim112970@gmail.com",
+            "sqavi037@gmail.com",
+            "moinuddin.insight@gmail.com",
+            "muzie771@gmail.com",
+            "moinuddinsups@gmail.com"
+          ],
+          "bulk_whatsapp_numbers": [],
+          "timestamp": "2026-05-17T22:59:08.842348"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:08.848344",
+      "level": "INFO",
+      "agent": "[EMAIL]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "email"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.157124",
+      "level": "SUCCESS",
+      "agent": "[EMAIL]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.158154",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.158154",
+      "level": "ERROR",
+      "agent": "WhatsApp",
+      "message": "Missing WHATSAPP_FROM_NUMBER for Twilio WhatsApp sending. Set WHATSAPP_FROM_NUMBER in .env to your Twilio WhatsApp sender number.",
+      "metadata": {
+        "recipient": "+917671901101"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.158154",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp message sent to +917671901101",
+      "metadata": {
+        "phone": "+917671901101",
+        "status": "failed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.158154",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.158154",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.373208",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated:  → FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.373208",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.21505379676818848
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:09.373208",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "✅ Message sent to sqavi037@gmail.com: Attendance Alert: Your child's attendance is below 75%",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 4.100482940673828
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to sqavi037@gmail.com",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com",
+        "subject": "Attendance Alert: Your child's attendance is below 75%"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "ERROR",
+      "agent": "WhatsApp",
+      "message": "Missing WHATSAPP_FROM_NUMBER for Twilio WhatsApp sending. Set WHATSAPP_FROM_NUMBER in .env to your Twilio WhatsApp sender number.",
+      "metadata": {
+        "recipient": "+917671901101"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp message sent to +917671901101",
+      "metadata": {
+        "phone": "+917671901101",
+        "status": "failed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "💬 WhatsApp messages sent to 1 recipient(s)",
+      "metadata": {
+        "count": 1
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:13.473691",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T22:59:14.089026",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6153347492218018
+      }
+    }
+  ],
+  "total_logs": 22,
+  "error_count": 2,
+  "success_count": 11
+}

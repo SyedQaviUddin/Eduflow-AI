@@ -1,0 +1,225 @@
+{
+  "workflow_id": "cf16adaa",
+  "timestamp": "2026-05-17T16:28:48.190868",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T16:28:40.938747",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'Holiday Notification Workflow' execution started",
+      "metadata": {
+        "workflow_id": "cf16adaa"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.938747",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: cf16adaa",
+      "metadata": {
+        "workflow_id": "wf-holiday-test",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T16:28:40.929784"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.938747",
+      "level": "INFO",
+      "agent": "[RESEARCH_ANALYSIS]",
+      "message": "Starting action: sentiment_analysis",
+      "metadata": {
+        "action_id": "sentiment_analysis",
+        "action_type": "research_analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "ERROR",
+      "agent": "ResearchAgent",
+      "message": "Error: \nLooks like you are missing some required data for this feature.\n\nTo download the necessary data, simply run\n\n    python -m textblob.download_corpora\n\nor use the NLTK downloader to download the missing data: http://nltk.org/data.html\nIf this doesn't fix the problem, file an issue at https://github.com/sloria/TextBlob/issues.\n",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "SUCCESS",
+      "agent": "[RESEARCH_ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "sentiment_analysis",
+        "duration": 0.038971662521362305
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "SUCCESS",
+      "agent": "[SENTIMENT]",
+      "message": "\u2705 NEGATIVE (60%)",
+      "metadata": {
+        "sentiment": "negative",
+        "score": 0.2,
+        "confidence": 0.6,
+        "text": "This product is terrible! Very bad experience. I want a refund!",
+        "analysis_type": "sentiment",
+        "method": "keyword_fallback"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp notification queued for +1234567890",
+      "metadata": {
+        "phone": "+1234567890"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:40.977719",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_alert_message",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:44.274082",
+      "level": "SUCCESS",
+      "agent": "[ALERT]",
+      "message": "\u2705 Message sent to admin@company.com: Alert: Product Complaint",
+      "metadata": {
+        "recipient": "admin@company.com",
+        "type": "alert"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:44.274082",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_alert_message",
+        "duration": 3.296363592147827
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:44.274082",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:44.490380",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: sentiment == 'negative' \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:44.490380",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.21629810333251953
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:44.490380",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_notification_message",
+      "metadata": {
+        "action_id": "send_notification_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:47.573815",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2705 Message sent to sqavi037@gmail.com,syeduddin827@gmail.com: Workflow Notification",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com,syeduddin827@gmail.com",
+        "type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:47.573815",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "send_notification_message",
+        "duration": 3.0834343433380127
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:47.573815",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "\ud83d\udce7 Email notification sent to sqavi037@gmail.com,syeduddin827@gmail.com",
+      "metadata": {
+        "recipient": "sqavi037@gmail.com,syeduddin827@gmail.com",
+        "subject": "Workflow Notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:47.573815",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T16:28:48.189858",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6160435676574707
+      }
+    }
+  ],
+  "total_logs": 21,
+  "error_count": 1,
+  "success_count": 11
+}

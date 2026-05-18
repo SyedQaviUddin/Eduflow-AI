@@ -1,0 +1,135 @@
+{
+  "workflow_id": "276e0679",
+  "timestamp": "2026-05-17T21:45:00.848535",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T21:44:55.233746",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'exam_dates_notification_workflow' execution started",
+      "metadata": {
+        "workflow_id": "276e0679"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:44:55.233746",
+      "level": "INFO",
+      "agent": "System",
+      "message": "🚀 Starting execution with ID: 276e0679",
+      "metadata": {
+        "workflow_id": "b7d07d2c-cf0",
+        "input_data": {
+          "name": "John Doe",
+          "email": "john@example.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T21:44:55.228758"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:44:55.233746",
+      "level": "INFO",
+      "agent": "[SEND_EMAIL]",
+      "message": "Starting action: action_1",
+      "metadata": {
+        "action_id": "action_1",
+        "action_type": "send_email"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:44:55.547357",
+      "level": "SUCCESS",
+      "agent": "[SEND_EMAIL]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_1",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:44:55.548012",
+      "level": "INFO",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "Starting action: action_2",
+      "metadata": {
+        "action_id": "action_2",
+        "action_type": "send_whatsapp"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:44:55.849334",
+      "level": "SUCCESS",
+      "agent": "[SEND_WHATSAPP]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "action_2",
+        "duration": 0.3
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:44:55.849334",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: send_notification_message",
+      "metadata": {
+        "action_id": "send_notification_message",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:45:00.233567",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✅ Message sent to admin@example.com: Exam Dates Notification Workflow Executed",
+      "metadata": {
+        "recipient": "admin@example.com",
+        "type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:45:00.233567",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "send_notification_message",
+        "duration": 4.384232997894287
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:45:00.233567",
+      "level": "SUCCESS",
+      "agent": "Notification",
+      "message": "📧 Email sent to admin@example.com",
+      "metadata": {
+        "recipient": "admin@example.com",
+        "subject": "Exam Dates Notification Workflow Executed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:45:00.233567",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T21:45:00.847294",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "✓ Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6137270927429199
+      }
+    }
+  ],
+  "total_logs": 12,
+  "error_count": 0,
+  "success_count": 6
+}

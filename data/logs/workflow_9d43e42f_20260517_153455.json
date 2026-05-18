@@ -1,0 +1,215 @@
+{
+  "workflow_id": "9d43e42f",
+  "timestamp": "2026-05-17T15:34:55.124050",
+  "logs": [
+    {
+      "timestamp": "2026-05-17T15:34:18.072318",
+      "level": "INFO",
+      "agent": "System",
+      "message": "Workflow 'complaint' execution started",
+      "metadata": {
+        "workflow_id": "9d43e42f"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.072318",
+      "level": "INFO",
+      "agent": "System",
+      "message": "\ud83d\ude80 Starting execution with ID: 9d43e42f",
+      "metadata": {
+        "workflow_id": "e740f3a1-381",
+        "input_data": {
+          "name": "John Doe",
+          "email": "carrywise964@gmail.com",
+          "id": "CUST-001",
+          "issue": "Product Complaint",
+          "text": "This product is terrible! Very bad experience. I want a refund!",
+          "timestamp": "2026-05-17T15:34:18.062065"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.072318",
+      "level": "INFO",
+      "agent": "[RESEARCH_ANALYSIS]",
+      "message": "Starting action: sentiment_analysis",
+      "metadata": {
+        "action_id": "sentiment_analysis",
+        "action_type": "research_analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "ERROR",
+      "agent": "ResearchAgent",
+      "message": "Error: \nLooks like you are missing some required data for this feature.\n\nTo download the necessary data, simply run\n\n    python -m textblob.download_corpora\n\nor use the NLTK downloader to download the missing data: http://nltk.org/data.html\nIf this doesn't fix the problem, file an issue at https://github.com/sloria/TextBlob/issues.\n",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "SUCCESS",
+      "agent": "[RESEARCH_ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "sentiment_analysis",
+        "duration": 0.04719376564025879
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "SUCCESS",
+      "agent": "[SENTIMENT]",
+      "message": "\u2705 NEGATIVE (60%)",
+      "metadata": {
+        "sentiment": "negative",
+        "score": 0.2,
+        "confidence": 0.6,
+        "text": "This product is terrible! Very bad experience. I want a refund!",
+        "analysis_type": "sentiment",
+        "method": "keyword_fallback"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: whatsapp_alert",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "SUCCESS",
+      "agent": "[WHATSAPP]",
+      "message": "WhatsApp notification queued for +1234567890",
+      "metadata": {
+        "phone": "+1234567890"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "whatsapp_alert",
+        "duration": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:18.119512",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: email_notification",
+      "metadata": {
+        "action_id": "email_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:36.214763",
+      "level": "ERROR",
+      "agent": "[EMAIL-REAL]",
+      "message": "\u274c Email failed: [Errno 11001] getaddrinfo failed",
+      "metadata": {
+        "recipient": "admin@company.com",
+        "error": "[Errno 11001] getaddrinfo failed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:36.214763",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "email_notification",
+        "duration": 18.095250844955444
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:36.214763",
+      "level": "INFO",
+      "agent": "[ANALYSIS]",
+      "message": "Starting action: condition_evaluation",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "action_type": "analysis"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:36.422592",
+      "level": "DEBUG",
+      "agent": "[CONDITION]",
+      "message": "Evaluated: sentiment == 'negative' \u2192 FALSE",
+      "metadata": {
+        "condition_id": "condition_1",
+        "result": false
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:36.422592",
+      "level": "SUCCESS",
+      "agent": "[ANALYSIS]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "condition_evaluation",
+        "duration": 0.20782971382141113
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:36.422592",
+      "level": "INFO",
+      "agent": "[NOTIFICATION]",
+      "message": "Starting action: email_notification",
+      "metadata": {
+        "action_id": "email_notification",
+        "action_type": "notification"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:54.507958",
+      "level": "ERROR",
+      "agent": "[EMAIL-REAL]",
+      "message": "\u274c Email failed: [Errno 11001] getaddrinfo failed",
+      "metadata": {
+        "recipient": "admin@company.com",
+        "error": "[Errno 11001] getaddrinfo failed"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:54.507958",
+      "level": "SUCCESS",
+      "agent": "[NOTIFICATION]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "email_notification",
+        "duration": 18.085366010665894
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:54.507958",
+      "level": "INFO",
+      "agent": "[REPORTING]",
+      "message": "Starting action: insights_generation",
+      "metadata": {
+        "action_id": "insights_generation",
+        "action_type": "reporting"
+      }
+    },
+    {
+      "timestamp": "2026-05-17T15:34:55.123498",
+      "level": "SUCCESS",
+      "agent": "[REPORTING]",
+      "message": "\u2713 Action completed successfully",
+      "metadata": {
+        "action_id": "insights_generation",
+        "duration": 0.6155393123626709
+      }
+    }
+  ],
+  "total_logs": 20,
+  "error_count": 3,
+  "success_count": 8
+}
