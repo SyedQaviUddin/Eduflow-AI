@@ -4,6 +4,35 @@ import os
 from pathlib import Path
 
 
+st.markdown("""
+<script>
+    // Force Streamlit light theme
+    const root = window.parent.document.documentElement;
+    root.setAttribute('data-theme', 'light');
+
+    // Remove dark mode classes
+    document.body.classList.remove('dark');
+
+    // Force white background
+    document.body.style.backgroundColor = 'white';
+</script>
+
+<style>
+    html, body, .stApp {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    section[data-testid="stSidebar"] {
+        background-color: #f5f7fa !important;
+    }
+
+    * {
+        color: black !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # st.markdown("""
 # <script>
 #     const html = window.parent.document.querySelector('html');
