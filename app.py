@@ -3,6 +3,14 @@ import streamlit as st
 import os
 from pathlib import Path
 
+
+st.markdown("""
+<script>
+    const html = window.parent.document.querySelector('html');
+    html.setAttribute('data-theme', 'light');
+</script>
+""", unsafe_allow_html=True)
+
 # Page configuration
 st.set_page_config(
     page_title="Eduflow AI - Workflow Automation",
@@ -10,32 +18,32 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-st.markdown("""
-<style>
+# st.markdown("""
+# <style>
 
-/* Force Light Theme */
-html, body, [class*="css"]  {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
+# /* Force Light Theme */
+# html, body, [class*="css"]  {
+#     background-color: #ffffff !important;
+#     color: #000000 !important;
+# }
 
-/* Main app background */
-.stApp {
-    background-color: #ffffff !important;
-}
+# /* Main app background */
+# .stApp {
+#     background-color: #ffffff !important;
+# }
 
-/* Sidebar */
-section[data-testid="stSidebar"] {
-    background-color: #f8f9fa !important;
-}
+# /* Sidebar */
+# section[data-testid="stSidebar"] {
+#     background-color: #f8f9fa !important;
+# }
 
-/* Text visibility */
-h1, h2, h3, h4, h5, h6, p, span, div, label {
-    color: #ffffff !important;
-}
+# /* Text visibility */
+# h1, h2, h3, h4, h5, h6, p, span, div, label {
+#     color: #ffffff !important;
+# }
 
-</style>
-""", unsafe_allow_html=True)
+# </style>
+# """, unsafe_allow_html=True)
 # Custom CSS for clean white theme
 # st.markdown("""
 # <style>
