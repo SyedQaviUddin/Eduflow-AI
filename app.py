@@ -4,12 +4,12 @@ import os
 from pathlib import Path
 
 
-st.markdown("""
-<script>
-    const html = window.parent.document.querySelector('html');
-    html.setAttribute('data-theme', 'light');
-</script>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <script>
+#     const html = window.parent.document.querySelector('html');
+#     html.setAttribute('data-theme', 'light');
+# </script>
+# """, unsafe_allow_html=True)
 
 # Page configuration
 st.set_page_config(
