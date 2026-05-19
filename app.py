@@ -31,7 +31,7 @@ section[data-testid="stSidebar"] {
 
 /* Text visibility */
 h1, h2, h3, h4, h5, h6, p, span, div, label {
-    color: #000000 !important;
+    color: #ffffff !important;
 }
 
 </style>
