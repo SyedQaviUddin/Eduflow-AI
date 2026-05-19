@@ -4,41 +4,6 @@ import os
 from pathlib import Path
 
 
-st.markdown("""
-<script>
-    // Force Streamlit light theme
-    const root = window.parent.document.documentElement;
-    root.setAttribute('data-theme', 'light');
-
-    // Remove dark mode classes
-    document.body.classList.remove('dark');
-
-    // Force white background
-    document.body.style.backgroundColor = 'white';
-</script>
-
-<style>
-    html, body, .stApp {
-        background-color: white !important;
-        color: black !important;
-    }
-
-    section[data-testid="stSidebar"] {
-        background-color: #f5f7fa !important;
-    }
-
-    * {
-        color: black !important;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# st.markdown("""
-# <script>
-#     const html = window.parent.document.querySelector('html');
-#     html.setAttribute('data-theme', 'light');
-# </script>
-# """, unsafe_allow_html=True)
 
 # Page configuration
 st.set_page_config(
@@ -47,99 +12,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-# st.markdown("""
-# <style>
 
-# /* Force Light Theme */
-# html, body, [class*="css"]  {
-#     background-color: #ffffff !important;
-#     color: #000000 !important;
-# }
-
-# /* Main app background */
-# .stApp {
-#     background-color: #ffffff !important;
-# }
-
-# /* Sidebar */
-# section[data-testid="stSidebar"] {
-#     background-color: #f8f9fa !important;
-# }
-
-# /* Text visibility */
-# h1, h2, h3, h4, h5, h6, p, span, div, label {
-#     color: #ffffff !important;
-# }
-
-# </style>
-# """, unsafe_allow_html=True)
-# Custom CSS for clean white theme
-# st.markdown("""
-# <style>
-#     :root {
-#         --primary-color: #0f4b8a;
-#         --secondary-color: #4a97d9;
-#         --accent-color: #f9af3a;
-#         --bg-light: #f7f9fc;
-#         --card-bg: #ffffff;
-#         --border-gray: #e1e5ed;
-#         --text-dark: #1b2430;
-#     }
-
-#     body {
-#         background-color: var(--bg-light);
-#         color: var(--text-dark);
-#     }
-
-#     .main {
-#         background-color: var(--bg-light);
-#     }
-
-#     .stSidebar {
-#         background-color: #ffffff;
-#         color: var(--text-dark);
-#         border-right: 1px solid var(--border-gray);
-#     }
-
-#     .stButton > button {
-#         background-color: var(--primary-color);
-#         color: #ffffff;
-#         border: 1px solid var(--primary-color);
-#         font-weight: 600;
-#         border-radius: 8px;
-#     }
-
-#     .stButton > button:hover {
-#         background-color: #0c3a6a;
-#         border-color: #0c3a6a;
-#     }
-
-#     h1, h2, h3, h4, h5 {
-#         color: var(--text-dark);
-#     }
-
-#     .stTabs [data-baseweb="tab-list"] {
-#         border-bottom: 1px solid var(--border-gray);
-#     }
-
-#     .stTabs [aria-selected="true"] {
-#         color: var(--primary-color);
-#         border-bottom: 3px solid var(--primary-color);
-#     }
-
-#     .card {
-#         background: var(--card-bg);
-#         border: 1px solid var(--border-gray);
-#         border-radius: 16px;
-#         padding: 18px;
-#         box-shadow: 0 12px 30px rgba(43, 72, 112, 0.06);
-#     }
-
-#     .card--highlight {
-#         border-color: var(--primary-color);
-#     }
-# </style>
-# """, unsafe_allow_html=True)
 st.markdown("""
 <style>
 
