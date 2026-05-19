@@ -10,7 +10,32 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+st.markdown("""
+<style>
 
+/* Force Light Theme */
+html, body, [class*="css"]  {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Main app background */
+.stApp {
+    background-color: #ffffff !important;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #f8f9fa !important;
+}
+
+/* Text visibility */
+h1, h2, h3, h4, h5, h6, p, span, div, label {
+    color: #000000 !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 # Custom CSS for clean white theme
 # st.markdown("""
 # <style>
