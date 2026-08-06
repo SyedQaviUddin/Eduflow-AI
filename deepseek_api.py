@@ -5,7 +5,7 @@ import re
 from typing import Dict, Any, Optional
 from datetime import datetime
 
-DEEPSEEK_API_KEY = "sk-ae734f80749f44e1926ad1c6a0511e31"
+DEEPSEEK_API_KEY = ""
 DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions"
 
 class DeepSeekAPI:
